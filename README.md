@@ -1,6 +1,6 @@
 Inno Setup
 ==========
-
+[![Build Status](https://travis-ci.org/Tiger66639/issrc.svg)](https://travis-ci.org/Tiger66639/issrc)
 Copyright (C) 1997-2015 Jordan Russell. All rights reserved.  
 Portions Copyright (C) 2000-2015 Martijn Laan. All rights reserved.  
 For conditions of distribution and use, see LICENSE.TXT.

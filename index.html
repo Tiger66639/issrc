@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Issrc by Tiger66639</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/Tiger66639/issrc">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/Tiger66639/issrc/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/Tiger66639/issrc/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Issrc</h1>
+          <p>Inno Setup is a free installer for Windows programs. First introduced in 1997, Inno Setup today rivals and even surpasses many commercial installers in feature set and stability.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/Tiger66639">Tiger66639</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="inno-setup" class="anchor" href="#inno-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inno Setup</h1>
+
+<p><a href="https://travis-ci.org/Tiger66639/issrc"><img src="https://travis-ci.org/Tiger66639/issrc.svg" alt="Build Status"></a>
+Copyright (C) 1997-2015 Jordan Russell. All rights reserved.<br>
+Portions Copyright (C) 2000-2015 Martijn Laan. All rights reserved.<br>
+For conditions of distribution and use, see LICENSE.TXT.</p>
+
+<p>Source code README</p>
+
+<h2>
+<a id="1-getting-started" class="anchor" href="#1-getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Getting Started</h2>
+
+<ul>
+<li>
+<p>Obtaining sources</p>
+
+<p>First you need to download the sources from Github. From the command line do:</p>
+
+<pre><code>&gt; git clone https://github.com/jrsoftware/issrc.git is
+&gt; cd is
+&gt; git submodule init
+&gt; git submodule update
+</code></pre>
+
+<p>If you don't have the Git client (<code>git</code>), get it from:</p>
+
+<p><a href="http://git-scm.com/">http://git-scm.com/</a></p>
+
+<p>To update your sources from the command line do:</p>
+
+<pre><code>&gt; git pull
+&gt; git submodule update
+</code></pre>
+
+<p>To be able to contribute to Inno Setup, clone your own fork instead of
+cloning the main Inno Setup repository, commit your work on topic branches
+and make pull requests. See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+</li>
+<li>
+<p>Install Borland Delphi</p>
+
+<p>Unicode Inno Setup:</p>
+
+<p>We compile all of Inno Setup's projects under Delphi 2009 with Update 3.</p>
+
+<p>Newer Delphi versions should also work but will lead to significantly larger
+files.</p>
+
+<p>Non Unicode Inno Setup:</p>
+
+<p>We compile all of Inno Setup's projects under Delphi 2.01, with the
+exception of Compil32 which is compiled under Delphi 3.02 (for the better
+Far East character set support), and Inno Setup Preprocessor's ISPP which
+is compiled under Delphi 7.</p>
+
+<p>Delphi 2.01 is used for the main projects because its VCL has a significantly
+smaller code size footprint than the later versions.</p>
+
+<p>If you do not have access to these old versions of Delphi, you should be
+able to compile the projects on later versions, however complete
+compatibility is NOT guaranteed. We try to make Inno Setup compilable on
+the later versions when possible, but do not have the resources to test
+every change on every Delphi version.</p>
+</li>
+<li>
+<p>Install Microsoft MSXML</p>
+
+<p>Install Microsoft MSXML 4.0 SP2 if you haven't already done so.
+See <a href="http://www.microsoft.com/en-us/download/details.aspx?id=19662">http://www.microsoft.com/en-us/download/details.aspx?id=19662</a></p>
+
+<p>If you are not sure whether you have MSXML 4.0 SP2 already, check for a
+file named msxml4.dll in your Windows System directory with a version number
+of 4.20.9818.0 (or later).</p>
+
+<p>Note: Microsoft MSXML is only needed to be able to compile the help files.</p>
+</li>
+<li>
+<p>Install Microsoft HTML Help Workshop</p>
+
+<p>Install Microsoft HTML Help Workshop if you haven't already done so.
+See <a href="http://www.microsoft.com/en-us/download/details.aspx?id=21138">http://www.microsoft.com/en-us/download/details.aspx?id=21138</a></p>
+
+<p>Note: Microsoft HTML Help Workshop is only needed to be able to compile the
+help files.</p>
+</li>
+<li>
+<p>Building</p>
+
+<p>To build all files run <strong>build.bat</strong> and follow the instructions.</p>
+
+<p>To just compile Inno Setup run <strong>compile-unicode.bat</strong> for Unicode Inno Setup
+or <strong>compile.bat</strong> for Non Unicode Inno Setup and follow the instructions.</p>
+
+<p>To just compile the Inno Setup help file and its web version run
+<strong>ishelp\compile.bat</strong> and follow the instructions.</p>
+
+<p>To just compile the Inno Setup Preprocessor help file and its web version run
+<strong>Projects\Ispp\Help\compile.bat</strong> and follow the instructions.</p>
+</li>
+</ul>
+
+<h2>
+<a id="2-delphi-20x-users-only" class="anchor" href="#2-delphi-20x-users-only" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Delphi 2.0x users ONLY</h2>
+
+<p>Before you can successfully compile the projects in Delphi 2.0, you must
+do two things:</p>
+
+<ul>
+<li>
+<p>Install the latest version of SYSTEM.DCU if you haven't already done so.
+It can be downloaded from Inprise's site at:</p>
+
+<p><a href="http://www.borland.com/devsupport/delphi/downloads/index.html">http://www.borland.com/devsupport/delphi/downloads/index.html</a></p>
+
+<p>Look for "System.zip" in the "Delphi 2 Items" section.</p>
+
+<p>If you do not do this, you will probably get an "I/O Error" message
+when trying to run the projects.</p>
+</li>
+<li>
+<p>If the files SHLOBJ.DCU and REGSTR.DCU are missing from your Delphi\Lib
+directory, download them here:</p>
+
+<p><a href="http://www.jrsoftware.org/files/delphi200units.zip">http://www.jrsoftware.org/files/delphi200units.zip</a>
+  (md5sum: 94530f3c400c728df897d7d740889487)</p>
+</li>
+</ul>
+
+<h2>
+<a id="3-component-installation" class="anchor" href="#3-component-installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Component Installation</h2>
+
+<p>If you intend to view or modify the Setup project's forms, you must install
+the following component units, which can be found in the Components
+directory.</p>
+
+<ul>
+<li>BidiCtrls</li>
+<li>BitmapImage</li>
+<li>FolderTreeView</li>
+<li>NewCheckListBox</li>
+<li>NewNotebookReg</li>
+<li>NewProgressBar</li>
+<li>NewStaticText</li>
+<li>PasswordEdit</li>
+<li>RichEditViewer</li>
+</ul>
+
+<p>If you intend to view or modify the Compil32 project's forms, you must
+additionally install the following components. (Like the Compil32 project
+itself, these require Delphi 3 or later.)</p>
+
+<ul>
+<li>DropListBox</li>
+<li>NewTabSet</li>
+</ul>
+
+<p>If you only want to edit code, then you may skip installation of the
+components, and choose "Cancel" if the Delphi IDE tells you a class can't
+be found.</p>
+
+<h2>
+<a id="4-overview" class="anchor" href="#4-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Overview</h2>
+
+<p>Inno Setup consists of seven projects:</p>
+
+<p><strong>Compil32</strong> - This is the GUI front-end for the compiler. Compil32 does not
+do the actual compilation itself; it relegates it to ISCmplr.dll. If the
+ISCmplr project is changed, you normally don't need to recompile Compil32
+since it's essentially a text editor, and is not affected by internal
+changes to the compiler.<br>
+Non Unicode Inno Setup note: This is the only project that is compiled
+under Delphi 3 (3.02 to be exact). The rest of the projects are compiled
+under Delphi 2.01.</p>
+
+<p><strong>ISCC</strong> - This is the command-line front-end to the compiler. Like
+Compil32, it depends on ISCmplr.dll to do the actual compiling.</p>
+
+<p><strong>ISCmplr</strong> - This is a DLL which is loaded by Compil32 and ISCC to compile
+scripts. The actual compiler code is in Compile.pas. See CompInt.pas for the
+various structures and function declarations used to interface to the DLL.</p>
+
+<p><strong>Setup</strong> - This is the actual "Setup" program. It displays the wizard, and
+performs all (un)installation-related tasks.</p>
+
+<p><strong>SetupLdr</strong> - This is the "setup loader." It self-extracts a compressed
+Setup program into the user's TEMP directory and runs it from there. It also
+displays the "This will install..." and /HELP message boxes.</p>
+
+<p><strong>ISPP\ISPP</strong> - This is a DLL implementing Inno Setup's preprocessor interface</p>
+
+<p>How do the projects link together?</p>
+
+<ul>
+<li><p>ISCmplr, ISPP, Setup, and SetupLdr share the unit Struct.pas. This unit
+contains various data structures and constants shared by the projects. If
+Struct.pas is changed, you usually will need to recompile ISCmplr, ISPP,
+Setup, and SetupLdr so that everything is in synch.</p></li>
+<li><p>There are more units which are shared between projects. Search the 'uses'
+clauses of the projects and units if you aren't sure if a project uses a
+particular unit.</p></li>
+<li><p>ISPP uses various copies of other Inno Setup files. To synch these
+run synch-isfiles.bat.</p></li>
+</ul>
+
+<h2>
+<a id="5-source-code-tips" class="anchor" href="#5-source-code-tips" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. Source code tips</h2>
+
+<ul>
+<li><p>If you modify the Setup or SetupLdr projects and want to be able to compile
+your installations with the new code, you'll need to copy the new EXE
+file(s) to the Setup Compiler directory under the extension .E32.</p></li>
+<li><p>When debugging the Setup project you should set UseSetupLdr=no in your
+script, and copy the resulting setup-*.bin files to the source code
+directory. This way you can simulate an actual installation while running
+under the Delphi debugger.</p></li>
+<li><p>All of the forms in the Setup project, with the exception of Main.dfm, have
+Scaled set to False. This is because they dynamically scale themselves at
+run-time by calling a function named SetFormFont.</p></li>
+<li>
+<p>When a Cardinal-type variable is compared against a constant expression,
+why is a Cardinal cast sometimes used around the constant expression?
+For example:</p>
+
+<div class="highlight highlight-source-pascal"><pre><span class="pl-k">var</span>
+    X: Cardinal;
+<span class="pl-k">begin</span>
+    <span class="pl-k">if</span> X &gt; Cardinal(<span class="pl-c1">1</span>) <span class="pl-k">then</span>
+        ...</pre></div>
+
+<p>The cast is needed to to work around a bug in Delphi 2 and 3 compilers:
+without it, a <em>signed</em> comparison is done.</p>
+</li>
+<li><p>A note for those curious: The Setup Compiler creates single EXE Setups by
+first creating the SETUP.EXE as usual, then concatenating the SETUP.0 and
+SETUP-1.BIN to the end of the SETUP.EXE, and finally modifying an internal
+data block in SETUP.EXE so it knows it's in "single EXE" form.</p></li>
+<li>
+<p>Starting with the 32-bit version of Inno Setup 1.12.7, the "StripReloc"
+utility is used to decrease the size of the Non Unicode .EXE and .E32 files.</p>
+
+<p>To download StripReloc, go to:
+<a href="http://www.jrsoftware.org/striprlc.php">http://www.jrsoftware.org/striprlc.php</a></p>
+</li>
+<li>
+<p>Delphi versions prior to 5 store .dfm files in a binary format. To be able to
+track changes to the forms using ordinary "diff" commands, .dfm.txt "mirrors"
+of the binary .dfm files have been created. Each time a .dfm file is
+modified, dfm2text is ran and both the .dfm file and the updated .dfm.txt
+file are commited.</p>
+
+<p>To download dfm2text, go to:
+<a href="http://www.jrsoftware.org/files/misc/dfm2text.zip">http://www.jrsoftware.org/files/misc/dfm2text.zip</a></p>
+</li>
+<li><p>For compiler debugging purposes define <code>STATICCOMPILER</code> in CompForm.pas
+and <code>STATICPREPROC</code> in Compile.pas. The latter requires Unicode Inno Setup.</p></li>
+</ul>
+
+<h2>
+<a id="6-precompiled-executables-and-libraries" class="anchor" href="#6-precompiled-executables-and-libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>6. Precompiled executables and libraries</h2>
+
+<p>The source code contains several precompiled executables and libaries:</p>
+
+<p><strong>Files\isbunzip.dll</strong>, <strong>Files\isbzip.dll</strong> - Compiled by Visual Studio 2005
+from the bzlib directory in the Iscompress repository.</p>
+
+<p><strong>Files\isunzlib.dll</strong>, <strong>Files\iszlib.dll</strong> - Compiled by Visual Studio 2005
+from the zlib-dll directory in the Iscompress repository.</p>
+
+<p><strong>Files\islzma.dll</strong>, <strong>Files\islzma32.exe</strong>, <strong>Files\islzma64.exe</strong> - Compiled
+by Visual Studio 2005 from the Projects\lzma2\Encoder directory.</p>
+
+<p><strong>Files\isscint.dll</strong> - Compiled by Visual Studio 2005 from Scintila 2.22 source
+code with scintilla-2.22-patch.txt applied.</p>
+
+<p><strong>Projects_shfolder.res</strong> - shfolder.dll from a fresh install of IE 5.5 SP2 on
+NT 4.0 stored in a compiled resource file.</p>
+
+<p><strong>Projects\Helper\x64\Release\Helper.exe</strong>, <strong>Projects\HelperEXEs.res</strong> -
+Compiled by Visual Studio 2005 from the Projects\Helper directory and then
+stored in a compiled resource file.</p>
+
+<p><strong>Projects\LzmaDecode\LzmaDecodeInno.obj</strong> - See Projects\LzmaDecode\compiling.txt.</p>
+
+<p><strong>Projects\lzma2\Decoder\ISLzmaDec.obj</strong>, <strong>Projects\lzma2\Decoder\ISLzma2Dec.obj</strong> -
+See Projects\lzma2\Decoder\compiling.txt.</p>
+
+<p><strong>ishelp\ISHelpGen\ISHelpGen.exe</strong> - See ishelp\ISHelpGen\compile.bat</p>
+
+<p><strong>Examples\MyProg.exe</strong>, <strong>Examples\MyProg-x64.exe</strong> -
+Compiled by Visual Studio 2005 from the Examples\MyProg directory.</p>
+
+<h2>
+<a id="7-inno-setup-specific-editing-guidelines-for-the-help-files" class="anchor" href="#7-inno-setup-specific-editing-guidelines-for-the-help-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>7. Inno Setup-specific editing guidelines for the help files</h2>
+
+<ul>
+<li>When mentioning something the user would type in a script, e.g. "MinVersion",
+surround it by <code>&lt;tt&gt;&lt;/tt&gt;</code> so that it's displayed in the Courier New font. This is
+a convention used throughout the help file. Example: <code>&lt;tt&gt;MinVersion&lt;/tt&gt;</code>
+</li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
